@@ -773,7 +773,6 @@ export enum FileFieldsEnum {
   ChildMdxFrontmatterRedirectTo = 'childMdx___frontmatter___redirectTo',
   ChildMdxFrontmatterRedirects = 'childMdx___frontmatter___redirects',
   ChildMdxFrontmatterSlug = 'childMdx___frontmatter___slug',
-  ChildMdxFrontmatterStartDate = 'childMdx___frontmatter___startDate',
   ChildMdxFrontmatterSubtitle = 'childMdx___frontmatter___subtitle',
   ChildMdxFrontmatterTags = 'childMdx___frontmatter___tags',
   ChildMdxFrontmatterTechStack = 'childMdx___frontmatter___techStack',
@@ -1076,7 +1075,6 @@ export enum FileFieldsEnum {
   ChildrenMdxFrontmatterRedirectTo = 'childrenMdx___frontmatter___redirectTo',
   ChildrenMdxFrontmatterRedirects = 'childrenMdx___frontmatter___redirects',
   ChildrenMdxFrontmatterSlug = 'childrenMdx___frontmatter___slug',
-  ChildrenMdxFrontmatterStartDate = 'childrenMdx___frontmatter___startDate',
   ChildrenMdxFrontmatterSubtitle = 'childrenMdx___frontmatter___subtitle',
   ChildrenMdxFrontmatterTags = 'childrenMdx___frontmatter___tags',
   ChildrenMdxFrontmatterTechStack = 'childrenMdx___frontmatter___techStack',
@@ -2286,7 +2284,6 @@ export enum MdxFieldsEnum {
   FrontmatterRedirectTo = 'frontmatter___redirectTo',
   FrontmatterRedirects = 'frontmatter___redirects',
   FrontmatterSlug = 'frontmatter___slug',
-  FrontmatterStartDate = 'frontmatter___startDate',
   FrontmatterSubtitle = 'frontmatter___subtitle',
   FrontmatterTags = 'frontmatter___tags',
   FrontmatterTechStack = 'frontmatter___techStack',
@@ -2436,27 +2433,12 @@ export type MdxFilterListInput = {
 
 export type MdxFrontmatter = {
   __typename?: 'MdxFrontmatter';
-  author?: Maybe<Scalars['String']>;
-  category?: Maybe<Array<Maybe<Scalars['String']>>>;
   cover?: Maybe<File>;
-  deliverables?: Maybe<Array<Maybe<Scalars['String']>>>;
-  description?: Maybe<Scalars['String']>;
   extLink?: Maybe<Scalars['String']>;
   featured?: Maybe<Scalars['Boolean']>;
-  githubLink?: Maybe<Scalars['String']>;
-  growthStage?: Maybe<Scalars['String']>;
   published?: Maybe<Scalars['Boolean']>;
-  readingStatus?: Maybe<Scalars['String']>;
-  redirectTo?: Maybe<Scalars['String']>;
-  redirects?: Maybe<Array<Maybe<Scalars['String']>>>;
   slug?: Maybe<Scalars['String']>;
-  startDate?: Maybe<Scalars['Date']>;
-  subtitle?: Maybe<Scalars['String']>;
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
-  techStack?: Maybe<Array<Maybe<Scalars['String']>>>;
-  title: Scalars['String'];
   type?: Maybe<Array<Maybe<Scalars['String']>>>;
-  updated?: Maybe<Scalars['Date']>;
 };
 
 export type MdxFrontmatterStartDateArgs = {
@@ -3276,9 +3258,7 @@ export enum SiteFieldsEnum {
   SiteMetadataAuthor = 'siteMetadata___author',
   SiteMetadataDescription = 'siteMetadata___description',
   SiteMetadataImage = 'siteMetadata___image',
-  SiteMetadataSiteUrl = 'siteMetadata___siteUrl',
   SiteMetadataTitle = 'siteMetadata___title',
-  SiteMetadataTwitterUsername = 'siteMetadata___twitterUsername',
 }
 
 export type SiteFilterInput = {
@@ -4015,18 +3995,14 @@ export type SiteSiteMetadata = {
   author?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   image?: Maybe<Scalars['String']>;
-  siteUrl?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
-  twitterUsername?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   author?: InputMaybe<StringQueryOperatorInput>;
   description?: InputMaybe<StringQueryOperatorInput>;
   image?: InputMaybe<StringQueryOperatorInput>;
-  siteUrl?: InputMaybe<StringQueryOperatorInput>;
   title?: InputMaybe<StringQueryOperatorInput>;
-  twitterUsername?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {

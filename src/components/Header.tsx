@@ -251,21 +251,13 @@ const Header = () => {
           <HeaderLinks>
             {config.navLinksShort && (
               <>
-                {config.navLinksShort.map(({ url, name }) => (
-                  <Link activeClassName="Link--is-active" to={url}>
+                {config.navLinksShort.map(({ url, name }, i) => (
+                  <Link key={i} activeClassName="Link--is-active" to={url}>
                     {name}
                   </Link>
                 ))}
               </>
             )}
-            <a
-              className="resume-button"
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Resume
-            </a>
           </HeaderLinks>
           <HeaderButtons>
             <HeaderButton
@@ -303,16 +295,6 @@ const Header = () => {
                   </Link>
                 </li>
               ))}
-              <li>
-                <a
-                  className="resume-button"
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Resume
-                </a>
-              </li>
             </ol>
           )}
         </nav>

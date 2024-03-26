@@ -124,78 +124,16 @@ const ProjectCardAction = styled(Link)`
   }
 `;
 
-const ActionIcons = styled('div')`
-  a {
-    padding-left: 0.5rem;
-  }
-`;
-
 const ProjectCardMdx = ({ data }: MdxFrontmatter) => {
   const image = getImage(data.cover);
-  const projectUrl = `/${data.slug}`;
+  const projectUrl = data.extLink;
   return (
     <ProjectCardContainer>
-      <Link to={projectUrl}>
+      <Link to={projectUrl} target="_blank">
         <ImageContainer>
           <GatsbyImage image={image} alt="cover" />
         </ImageContainer>
       </Link>
-      <PostCategory>{data.category}</PostCategory>
-      <PostTitle>
-        <Link to={projectUrl}>{data.title}</Link>
-      </PostTitle>
-      <PostDescription>{data.description}</PostDescription>
-      <PostMetas>
-        <>
-          {data.tags.slice(0, 3).map((tag) => (
-            <Link to={`/projects/tags/${kebabCase(tag)}`}>
-              <Tag>{tag.toUpperCase()}</Tag>
-            </Link>
-          ))}
-        </>
-      </PostMetas>
-      <Actions>
-        <ProjectCardAction to={projectUrl}>
-          Details <span>&#8594;</span>
-        </ProjectCardAction>
-        <ActionIcons>
-          {data.extLink && (
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href={data.extLink}
-              aria-label="link"
-              css={css`
-                margin-left: 10px;
-                color: var(--color-primary, #73abff);
-                :hover {
-                  color: var(--color-text, #16161a);
-                }
-              `}
-            >
-              <PublicIcon />
-            </a>
-          )}
-
-          {data.githubLink && (
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href={data.githubLink}
-              aria-label="github"
-              css={css`
-                margin-left: 10px;
-                color: var(--color-primary, #73abff);
-                :hover {
-                  color: var(--color-text, #16161a);
-                }
-              `}
-            >
-              <GitHubIcon />
-            </a>
-          )}
-        </ActionIcons>
-      </Actions>
     </ProjectCardContainer>
   );
 };

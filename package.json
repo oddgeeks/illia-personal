@@ -1,9 +1,9 @@
 {
   "name": "personal-website-v1",
   "private": true,
-  "description": "Portfolio of Walter Teng",
+  "description": "Portfolio of Illia Korniev",
   "version": "1.1.0",
-  "author": "Walter Teng | walterteng.com | walter.tengkw@gmail.com",
+  "author": "Illia Korniev",
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/css": "^11.1.3",
@@ -99,7 +99,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/davzoku/personal-website-v1"
+    "url": "https://github.com/oddgeeks"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"

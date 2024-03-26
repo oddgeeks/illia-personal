@@ -10,7 +10,6 @@ export const SectionGrid = styled('div')`
   @media (min-width: ${dimensions.maxwidthTablet}px) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
   }
 `;

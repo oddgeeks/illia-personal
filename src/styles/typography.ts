@@ -61,12 +61,12 @@ const typeStyles = css`
     font-family: var(--fontFamily-sans);
   }
 
-  blockquote p:first-child {
+  blockquote p:first-of-type {
     margin: 1rem 1rem 0.2rem 1rem;
     padding: 1rem 1rem 0.2rem 1rem;
   }
 
-  blockquote p:not(:first-child):not(:last-child) {
+  blockquote p:not(:first-of-type):not(:last-child) {
     margin: 0.2rem 1rem 0.2rem 1rem;
     padding: 0.2rem 1rem 0.2rem 1rem;
   }

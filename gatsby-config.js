@@ -36,20 +36,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/notes`,
-        name: "Notes",
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/books`,
-        name: "Books",
-      },
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md", ".markdown"],
@@ -115,21 +101,6 @@ module.exports = {
       },
     },    
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`,
-    {
-      resolve: `gatsby-plugin-webmention`,
-      options: {
-        username: "walterteng.com", // webmention.io username
-        identity: {
-          github: "davzoku",
-          twitter: "davzoku", // no @
-        },
-        mentions: true,
-        pingbacks: true,
-        domain: "walterteng.com",
-        token: process.env.WEBMENTIONS_TOKEN,
-      },
-    },
     {
       resolve: `gatsby-plugin-theme-switcher`,
       options: {
@@ -137,56 +108,50 @@ module.exports = {
         defaultLightTheme: "theme-night-safari",
       },
     },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.nodes.map(node => {
-                return Object.assign({}, node.frontmatter, {
-                  description: node.frontmatter.description,
-                  date: node.frontmatter.updated,
-                  url: site.siteMetadata.siteUrl + '/' + node.frontmatter.slug,
-                  guid: site.siteMetadata.siteUrl + '/' + node.frontmatter.slug,
-                })
-              })
-            },
-            query: `
-              {
-                allMdx(
-                  filter: {frontmatter: {published: {eq: true}}}
-                  sort: {order: DESC, fields: frontmatter___updated}
-                ) {
-                  nodes {
-                    frontmatter {
-                      description
-                      title
-                      startDate
-                      slug
-                      updated
-                    }
-                  }
-                }
-              }
-            `,
-            output: '/rss.xml',
-            title: `walterteng.com Feed`,
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-feed`,
+    //   options: {
+    //     query: `
+    //       {
+    //         site {
+    //           siteMetadata {
+    //             title
+    //             description
+    //             siteUrl
+    //             site_url: siteUrl
+    //           }
+    //         }
+    //       }
+    //     `,
+    //     feeds: [
+    //       {
+    //         serialize: ({ query: { site, allMdx } }) => {
+    //           return allMdx.nodes.map(node => {
+    //             return Object.assign({}, node.frontmatter, {
+    //               description: node.frontmatter.description,
+    //               date: node.frontmatter.updated,
+    //             })
+    //           })
+    //         },
+    //         query: `
+    //           {
+    //             allMdx(
+    //             ) {
+    //               nodes {
+    //                 frontmatter {
+    //                   description
+    //                   title
+    //                   updated
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         `,
+    //         output: '/rss.xml',
+    //         title: `walterteng.com Feed`,
+    //       },
+    //     ],
+    //   },
+    // },
   ],
 }

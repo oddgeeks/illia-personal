@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Twitter, GitHub, Instagram, LinkedIn } from './Social';
+import { GitHub, LinkedIn } from './Social';
 
 const FooterContainer = styled('div')`
   width: 90%;
@@ -47,8 +47,6 @@ const Footer = ({ author }: FooterProps) => (
       </FooterAuthor>
     </FooterCopyright>
     <FooterLinks>
-      <Twitter />
-      <Instagram />
       <GitHub />
       <LinkedIn />
     </FooterLinks>

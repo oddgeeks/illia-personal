@@ -1,9 +1,11 @@
+/* eslint-disable react/no-unknown-property */
 import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Img = styled.img`
   max-width: 100%;
+  border-radius: 12px;
 `;
 
 export interface BasicImageProps {
@@ -36,7 +38,6 @@ export const BasicImage = ({
               display: 'block',
               margin: margin || '0',
               padding: padding || '1rem 0',
-              borderRadius: '4px',
             })}
             src={src}
             alt={alt}
@@ -53,7 +54,6 @@ export const BasicImage = ({
           display: 'block',
           margin: margin || '0',
           padding: padding || '1rem 0',
-          borderRadius: '4px',
         })}
         src={src}
         alt={alt}

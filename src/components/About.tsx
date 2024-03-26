@@ -13,12 +13,19 @@ const AboutContainer = styled('div')`
 `;
 
 const AboutPhoto = styled('div')`
-  margin: auto;
+  padding: 2rem;
 `;
 
 const AboutBio = styled('div')`
-  margin: auto;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  p {
+    margin: 0;
+  }
+
   a {
     font-weight: 600;
     color: var(--color-primary, #73abff);
@@ -38,7 +45,7 @@ const AboutBio = styled('div')`
 
   ul {
     display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
+    grid-template-columns: auto auto auto;
     padding: 0;
     margin: 20px 0 0 0;
     overflow: hidden;
@@ -59,8 +66,16 @@ const AboutBio = styled('div')`
     }
   }
 
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
+  @media (max-width: ${dimensions.maxwidthDesktop}px) {
     padding: 0rem;
+    ul {
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 0;
+      margin: 20px 0 0 0;
+      overflow: hidden;
+      list-style: none;
+    }
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
@@ -75,51 +90,20 @@ const AboutBio = styled('div')`
   }
 `;
 
-const AboutLinkContainer = styled('div')`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 20%;
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    display: none;
-  }
-`;
-
-const AboutLink = styled('a')`
-  margin-bottom: 1.5em;
-  font-weight: 600;
-  line-height: 1.9;
-  text-decoration: none;
-  color: var(--color-text, #16161a);
-
-  span {
-    margin-left: 1em;
-    transform: translateX(-8px);
-    display: inline-block;
-    opacity: 0;
-    transition: all 400ms ease-in-out;
-  }
-
-  &:hover {
-    span {
-      transform: translateX(0px);
-      opacity: 1;
-      transition: all 150ms ease-in-out;
-    }
-  }
-`;
-
-const skills = ['Python', 'PyTorch', 'Java', 'Javascript', 'Next.js', 'AWS'];
-
-const bioLinks = new Map([
-  ['Twitter', 'https://twitter.com/davzoku'],
-  ['Instagram', 'https://www.instagram.com/drawwithwalter/'],
-  ['Github', 'https://github.com/davzoku'],
-  ['Linkedin', 'https://www.linkedin.com/in/tengkokwai/'],
-  ['Polywork', 'https://www.polywork.com/walterteng'],
-  ['Credly', 'https://credly.com/users/waltertengkw/badges'],
-]);
+const skills = [
+  'C/C++',
+  'Java/SpringBoot',
+  'Ruby/Ruby On Rails',
+  'JavaScript/TypeScript',
+  'PHP/Laravel',
+  'Node.js/Express/NestJS',
+  'React.js/Next.js',
+  'Vue.js/Nuxt.js',
+  'Svelte/SvelteKit',
+  'SQL/MySQL/PostgreSQL',
+  'NoSQL/MongoDB',
+  'AWS/GCP/AZURE',
+];
 
 const About = () => (
   <AboutContainer>
@@ -136,44 +120,23 @@ const About = () => (
     </AboutPhoto>
     <AboutBio>
       <p>
-        Hi! My name is Walter. I'm a software engineer with a focus on
-        delivering business value through innovation and technology. I am
-        delighted to have opportunities in my career to helping my clients in
-        the government, healthcare, and legal sectors to improve their digital
+        Hi! My name is Illia. I'm a software engineer with a focus on delivering
+        business value through innovation and technology. I am delighted to have
+        opportunities in my career to helping my clients in the government,
+        healthcare, e-commerce and legal sectors to improve their digital
         experiences.
       </p>
 
       <p>
-        I am currently pursuing my{' '}
-        <a href="https://scis.smu.edu.sg/master-it-business/artificial-intelligence-track/curriculum">
-          graduate studies
-        </a>{' '}
-        in Artificial Intelligence and business. I seek to develop innovative
-        solutions that can help solve complex problems at the intersections of
-        business, AI and software engineering.
-      </p>
-
-      <p>
-        Over here in my <a href="#garden">digital garden</a>, I write about how
-        I make my life 1% easier as a software engineer, summarize books I read,
-        and share projects that I am passionate about.
+        I am currently pursuing my studies in Artificial Intelligence and
+        business. I seek to develop innovative solutions that can help solve
+        complex problems at the intersections of business, AI and software
+        engineering.
       </p>
 
       <p>Here are a few technologies that I've been working with recently:</p>
       <ul>{skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}</ul>
     </AboutBio>
-    <AboutLinkContainer>
-      {[...bioLinks].map((item) => {
-        const name = item[0];
-        const link = item[1];
-        return (
-          <AboutLink href={link} target="_blank" rel="noopener noreferrer">
-            {name}
-            <span>&#8594;</span>
-          </AboutLink>
-        );
-      })}
-    </AboutLinkContainer>
   </AboutContainer>
 );
 
