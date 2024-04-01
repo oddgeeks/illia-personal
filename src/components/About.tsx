@@ -103,6 +103,7 @@ const skills = [
   'SQL/MySQL/PostgreSQL',
   'NoSQL/MongoDB',
   'AWS/GCP/AZURE',
+  'Web3.js/Ethers.js'
 ];
 
 const About = () => (
